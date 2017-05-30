@@ -35,7 +35,13 @@ shinyServer(function(input, output) {
   
   
   
-  output$AvgMonth <- renderPlotly({
+  output$AvgMonthYear <- renderPlotly({
+    if(input$var == "Month"){
+      avg.data <- avg.month.data
+    } else{
+      avg.data <- avg.year.data
+    }
+    
     return(BuildMap(avg.data))
   })
   
