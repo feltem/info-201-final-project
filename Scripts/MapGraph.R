@@ -18,8 +18,8 @@ View(updated.month.data)
 updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Area.Estimate))
 
 #Organize percentages smoked by State
-avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents))
-
+avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents), code)
+View(avg.month.data)
 avg.year.data <- ddply(updated.year.data, .(State), summarize, percents = mean(percents))
 
 
