@@ -23,17 +23,21 @@ updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Are
 
 # Organize percentages smoked by State
 avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents))
-
+View(avg.month.data)
+new.avg.month.data <- merge(avg.month.data, states.data, by = "State")
+View(new.avg.month.data)
 avg.year.data <- ddply(updated.year.data, .(State), summarize, percents = mean(percents))
+new.avg.year.data <- merge(avg.year.data, states.data, by = "State")
+View(new.avg.year.data)
 
 shinyServer(function(input, output) { 
 
   # Map  with Widget
   output$AvgMonthYear <- renderPlotly({
     if(input$var == "Month"){
-      avg.data <- avg.month.data
+      avg.data <- new.avg.month.data
     } else{
-      avg.data <- avg.year.data
+      avg.data <- new.avg.year.data
     }
     
     return(BuildMap(avg.data))

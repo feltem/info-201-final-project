@@ -36,7 +36,7 @@ BuildMap <- function(avg.data){
   
   AvgMonthYear <- plot_geo(avg.data, locationmode = 'USA-states') %>%
     add_trace(
-      z = ~percents, text = ~percents, locations = ~State,
+      z = ~percents, text = ~percents, locations = ~Abbreviation,
       color = ~percents, colors = 'Greens'
     ) %>%
     colorbar(title = "Week Smoked") %>%
