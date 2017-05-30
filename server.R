@@ -6,7 +6,7 @@ library(shiny)
 marijuana.laws <- read.csv('./Data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
 source('./scripts/Timeline.R')
 
-##Domincks data manipulatoin. 
+##Domincks data manipulation. 
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 
@@ -34,7 +34,7 @@ shinyServer(function(input, output) {
   
   
   
-  
+  ##Map  with Widget
   output$AvgMonthYear <- renderPlotly({
     if(input$var == "Month"){
       avg.data <- avg.month.data

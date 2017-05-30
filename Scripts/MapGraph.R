@@ -18,7 +18,7 @@ BuildMap <- function(avg.data){
     lakecolor = toRGB('white')
   )
   
-  p <- plot_geo(avg.data, locationmode = 'USA-states') %>%
+  AvgMonthYear <- plot_geo(avg.data, locationmode = 'USA-states') %>%
     add_trace(
       z = ~percents, text = ~hover, locations = ~State,
       color = ~percents, colors = 'Greens'
@@ -28,4 +28,7 @@ BuildMap <- function(avg.data){
       title = 'Weed Smoked in America',
       geo = g
     )
+  
+  return(AvgMonthYear)
 }
+
