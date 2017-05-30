@@ -29,19 +29,21 @@ shinyUI(navbarPage('Marijuana Timeline',
                  tabPanel('Map',
                           # Create a sidebar layout for this tab (page)
                           sidebarLayout(
+                            sidebarPanel(
+                              p('States with Most Usage'),
+                              
+  
+                              selectInput(inputId = "var",
+                                          label = "Month vs. Year:",
+                                          choices = c("Month", "Year"),
+                                          selected = "Month")
+                              
+                            ),
                             
-                            # Create a sidebarPanel for your controls
-                          sidebarPanel(
-                            
-                            #Widet
-                            
-                          
-                          
-                          ),
-                          mainPanel(
-                            #output datavis
-                            plotlyOutput('timeline')
-                          )
+                            # Show a plot of the generated distribution
+                            mainPanel(
+                              plotlyOutput("AvgMonthYear")
+                            )
                           )
                           
                 ),

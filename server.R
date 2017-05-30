@@ -1,7 +1,7 @@
 # server.r 
 library(shiny)
 
-setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
+#setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
 
 marijuana.laws <- read.csv('./Data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
 source('./scripts/Timeline.R')
