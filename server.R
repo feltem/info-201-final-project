@@ -3,8 +3,9 @@ library(shiny)
 
 setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
 
-marijuana.laws <- read.csv('./Data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
-source('./scripts/Timeline.R')
+marijuana.laws <- read.csv('./data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
+source('./Scripts/Timeline.R')
+source('./Scripts/MapGraph.r')
 
 ##Domincks data manipulatoin. 
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
