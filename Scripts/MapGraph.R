@@ -14,7 +14,7 @@ is.data.frame(data.set.year)
 
 #create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
-
+View(updated.month.data)
 updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Area.Estimate))
 
 #Organize percentages smoked by State
@@ -36,7 +36,7 @@ BuildMap <- function(avg.data){
   
   AvgMonthYear <- plot_geo(avg.data, locationmode = 'USA-states') %>%
     add_trace(
-      z = ~percents, text = ~hover, locations = ~State,
+      z = ~percents, text = ~percents, locations = ~State,
       color = ~percents, colors = 'Greens'
     ) %>%
     colorbar(title = "Week Smoked") %>%
