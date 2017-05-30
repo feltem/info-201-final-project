@@ -20,15 +20,17 @@ risk.avg <- round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,4
 risk.confidence <- risk.avg - round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,5])))))
 
 # Interactive Plotly Graph
-plot_ly(
-        x = c("Past Month", "Past Year", "Percieved Risk Average"),
-        y = c(month.avg, year.avg, risk.avg),
-        type = "bar", 
-        error_y = ~list(value = c(month.confidence, year.confidence, risk.confidence),
-                        color = '#000000'),
-        marker = list(color = c('rgb(140,0,26)', 'rgb(140,0,26)', 'rgb(169,169,169)'), width = 1.5, 
-                      line = list(color = 'rgb(169,169,169)'))) %>% 
-layout(title = "Marijuana Usage & Risk",
-       xaxis = list(title = "Marijuana Usage"),
-       yaxis = list(title = "Percent"))
+BuildBar <- function(data) {
+  plot_ly(
+          x = c("Past Month", "Past Year", "Percieved Risk Average"),
+          y = c(month.avg, year.avg, risk.avg),
+          type = "bar", 
+          error_y = ~list(value = c(month.confidence, year.confidence, risk.confidence),
+                          color = '#000000'),
+          marker = list(color = c('rgb(140,0,26)', 'rgb(140,0,26)', 'rgb(169,169,169)'), width = 1.5, 
+                        line = list(color = 'rgb(169,169,169)'))) %>% 
+  layout(title = "Marijuana Usage & Risk",
+         xaxis = list(title = "Marijuana Usage"),
+         yaxis = list(title = "Percent"))
+}
                     
