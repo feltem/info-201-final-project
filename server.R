@@ -11,13 +11,14 @@ source('./Scripts/Bar Graph.R')
 ##Dominicks data manipulation. 
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
-
+states.data <- read.csv("./data/States.csv")
 is.data.frame(data.set.month)
 is.data.frame(data.set.year)
-
+is.data.frame(states.data)
+View(states.data)
 # Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
-View(updated.month.data)
+
 updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Area.Estimate))
 
 # Organize percentages smoked by State
