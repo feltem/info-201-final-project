@@ -1,29 +1,34 @@
 # Setup
 library(dplyr)
-library(ggplot2)
+library(plotly)
 # install.packages('readxl')
 library(readxl)
 
-# Combine Datasets
-first.use <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/First_Use_Marijuana.csv')
-first.avg <- mean(as.numeric(gsub("%", "", as.character(first.use[,4]))))
-
+# Past Month Manipulation
 past.month <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Use_Past_Month.csv')
-month.avg <- mean(as.numeric(gsub("%", "", as.character(past.month[,4]))))
+month.avg <- round(mean(as.numeric(gsub("%", "", as.character(past.month[,4])))))
+month.confidence <- month.avg - round(mean(as.numeric(gsub("%", "", as.character(past.month[,5])))))
 
+# Past Year Manipulation
 past.year <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Use_Past_Year.csv')
-year.avg <- mean(as.numeric(gsub("%", "", as.character(past.year[,4]))))
+year.avg <- round(mean(as.numeric(gsub("%", "", as.character(past.year[,4])))))
+year.confidence <- year.avg - round(mean(as.numeric(gsub("%", "", as.character(past.year[,5])))))
 
+# Risk Perception Manipulation
 risk.perceptions <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Risk_Perceptions.csv')
-risk.avg <- mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,4]))))
+risk.avg <- round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,4])))))
+risk.confidence <- risk.avg - round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,5])))))
 
-my.data <- full_join(past.month, past.year, by = 'Order', suffix = c('.month', '.year')) %>% 
-           full_join(y = risk.perceptions, by = 'Order', suffix = c('past', '.risk')) %>% 
-           full_join(y = first.use, by = 'Order', suffix = c('.risk', '.first'))
-
-graph <- geom_histogram(mapping = NULL, data = my.data, stat = "bin",
-                        position = "stack", binwidth = NULL, bins = NULL, na.rm = FALSE,
-                        show.legend = NA, inherit.aes = TRUE)
-count <- data.frame(c(first.avg, month.avg, year.avg, risk.avg))
-ggplot(count, aes(x = c.first.avg..month.avg..year.avg..risk.avg.)) +
-     geom_bar()
+# Interactive Plotly Graph
+plot_ly(
+        x = c("Past Month", "Past Year", "Percieved Risk Average"),
+        y = c(month.avg, year.avg, risk.avg),
+        type = "bar", 
+        error_y = ~list(value = c(month.confidence, year.confidence, risk.confidence),
+                        color = '#000000'),
+        marker = list(color = c('rgb(140,0,26)', 'rgb(140,0,26)', 'rgb(169,169,169)'), width = 1.5, 
+                      line = list(color = 'rgb(169,169,169)'))) %>% 
+layout(title = "Marijuana Usage & Risk",
+       xaxis = list(title = "Marijuana Usage"),
+       yaxis = list(title = "Percent"))
+                    
