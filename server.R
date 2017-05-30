@@ -12,10 +12,10 @@ source('./Scripts/Bar Graph.R')
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 states.data <- read.csv("./data/States.csv")
-is.data.frame(data.set.month)
-is.data.frame(data.set.year)
-is.data.frame(states.data)
-View(states.data)
+#is.data.frame(data.set.month)
+#is.data.frame(data.set.year)
+#is.data.frame(states.data)
+#View(states.data)
 # Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
 
@@ -23,12 +23,13 @@ updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Are
 
 # Organize percentages smoked by State
 avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents))
-View(avg.month.data)
+#View(avg.month.data)
 new.avg.month.data <- merge(avg.month.data, states.data, by = "State")
-View(new.avg.month.data)
+#View(new.avg.month.data)
 avg.year.data <- ddply(updated.year.data, .(State), summarize, percents = mean(percents))
 new.avg.year.data <- merge(avg.year.data, states.data, by = "State")
-View(new.avg.year.data)
+#View(new.avg.year.data)
+#############
 
 shinyServer(function(input, output) { 
 
