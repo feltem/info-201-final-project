@@ -4,7 +4,18 @@
 library(shiny)
 library(plotly)
 
-shinyUI(navbarPage('Marijuana Timeline',
+shinyUI(navbarPage('Marijuana Facts',
+                   
+                   tabPanel("Introduction",
+                            
+                            # Main panel: display data
+                              mainPanel(
+                                #output datavis
+                                img(src="./leaf18n-1-web.jpg", height = 400, width = 300)
+                                
+                              )
+                            ),
+                    
                   tabPanel("Timeline for Marijuana Legalization",
                   
                           
@@ -24,7 +35,7 @@ shinyUI(navbarPage('Marijuana Timeline',
                               #output datavis
                                 plotlyOutput('timeline')
                             )
-                          )
+                        )
                  ),
                  tabPanel('Map',
                           # Create a sidebar layout for this tab (page)
