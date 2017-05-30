@@ -5,9 +5,10 @@ library(shiny)
 
 marijuana.laws <- read.csv('./data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
 source('./Scripts/Timeline.R')
-source('./Scripts/MapGraph.r')
+source('./Scripts/MapGraph.R')
+source('./Scripts/Bar Graph.R')
 
-##Domincks data manipulation. 
+##Dominicks data manipulation. 
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 
@@ -31,7 +32,9 @@ View(avg.year.data)
 
 
 shinyServer(function(input, output) { 
-  
+  data <- reactive({
+    d[1:input$plotly_nb,]
+  })
   
   
   
@@ -51,4 +54,7 @@ shinyServer(function(input, output) {
     return(BuildTimeline(marijuana.laws, input$yvar))
   }) 
     
+  output$bargraph <- renderPlotly({
+    return(BuildBar(data.set.month))
+  })
 })
