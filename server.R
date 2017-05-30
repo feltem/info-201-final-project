@@ -52,7 +52,7 @@ shinyServer(function(input, output) {
     return(BuildTimeline(marijuana.laws, input$yvar))
   }) 
     
-  output$bargraph <- renderPlotly({
+  output$plot <- renderPlotly({
     return(BuildBar(data.set.month))
   })
 })
