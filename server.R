@@ -17,7 +17,7 @@ is.data.frame(data.set.year)
 
 # Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
-
+View(updated.month.data)
 updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Area.Estimate))
 
 # Organize percentages smoked by State
