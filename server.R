@@ -1,7 +1,7 @@
 # server.r 
 library(shiny)
 
-setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
+#setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
 
 marijuana.laws <- read.csv('./data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
 source('./Scripts/Timeline.R')
@@ -36,7 +36,13 @@ shinyServer(function(input, output) {
   
   
   
-  output$AvgMonth <- renderPlotly({
+  output$AvgMonthYear <- renderPlotly({
+    if(input$var == "Month"){
+      avg.data <- avg.month.data
+    } else{
+      avg.data <- avg.year.data
+    }
+    
     return(BuildMap(avg.data))
   })
   
