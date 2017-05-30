@@ -32,9 +32,7 @@ View(avg.year.data)
 
 
 shinyServer(function(input, output) { 
-  data <- reactive({
-    d[1:input$plotly_nb,]
-  })
+  
   
   
   

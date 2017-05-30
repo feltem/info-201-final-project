@@ -61,7 +61,7 @@ shinyUI(navbarPage('Marijuana Timeline',
                          ),
                          mainPanel(
                            #output datavis
-                           plotlyOutput('timeline')
+                           plotlyOutput('plot')
                          )
                          )
                          
