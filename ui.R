@@ -55,7 +55,7 @@ shinyUI(navbarPage('Marijuana Timeline',
                            # Create a sidebarPanel for your controls
                          sidebarPanel(
                              
-                             #Widget
+                             # Text
                              
                              
                          ),

@@ -15,28 +15,19 @@ data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 is.data.frame(data.set.month)
 is.data.frame(data.set.year)
 
-View(data.set.month)
-View(data.set.year)
-
-#create new column with no percent sign so we can calculate values
+# Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
 
 updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Area.Estimate))
 
-#Organize percentages smoked by State
+# Organize percentages smoked by State
 avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents))
-View(avg.month.data)
 
 avg.year.data <- ddply(updated.year.data, .(State), summarize, percents = mean(percents))
-View(avg.year.data)
-
 
 shinyServer(function(input, output) { 
-  
-  
-  
-  
-  ##Map  with Widget
+
+  # Map  with Widget
   output$AvgMonthYear <- renderPlotly({
     if(input$var == "Month"){
       avg.data <- avg.month.data
@@ -47,11 +38,11 @@ shinyServer(function(input, output) {
     return(BuildMap(avg.data))
   })
   
-  ##Timeline with Widgit 
+  # Timeline with Widgit 
   output$timeline <- renderPlotly({ 
     return(BuildTimeline(marijuana.laws, input$yvar))
   }) 
-    
+  # Bar Graph without Widget
   output$plot <- renderPlotly({
     return(BuildBar(data.set.month))
   })

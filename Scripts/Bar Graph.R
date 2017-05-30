@@ -5,17 +5,17 @@ library(plotly)
 library(readxl)
 
 # Past Month Manipulation
-past.month <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Use_Past_Month.csv')
+past.month <- read.csv('./Data/Marijuana_Use_Past_Month.csv')
 month.avg <- round(mean(as.numeric(gsub("%", "", as.character(past.month[,4])))))
 month.confidence <- month.avg - round(mean(as.numeric(gsub("%", "", as.character(past.month[,5])))))
 
 # Past Year Manipulation
-past.year <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Use_Past_Year.csv')
+past.year <- read.csv('./Data/Marijuana_Use_Past_Year.csv')
 year.avg <- round(mean(as.numeric(gsub("%", "", as.character(past.year[,4])))))
 year.confidence <- year.avg - round(mean(as.numeric(gsub("%", "", as.character(past.year[,5])))))
 
 # Risk Perception Manipulation
-risk.perceptions <- read.csv('~/Documents/INFO 201/info-201-final-project/Data/Marijuana_Risk_Perceptions.csv')
+risk.perceptions <- read.csv('./Data/Marijuana_Risk_Perceptions.csv')
 risk.avg <- round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,4])))))
 risk.confidence <- risk.avg - round(mean(as.numeric(gsub("%", "", as.character(risk.perceptions[,5])))))
 
