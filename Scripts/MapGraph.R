@@ -4,7 +4,7 @@ library(plotly)
 library(plyr)
 library(tidyr)
 #Set Working Directory:
-setwd("~/Documents/Spring2017/INFO201/final/info-201-final-project/Scripts")
+#setwd("~/Documents/Spring2017/INFO201/final/info-201-final-project/Scripts")
 
 data.set.month <- read.csv("../data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("../data/Marijuana_Use_Past_Year.csv")
