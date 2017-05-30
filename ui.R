@@ -2,7 +2,7 @@
 
 
 library(shiny)
-
+library(plotly)
 
 shinyUI(fluidPage(
   
@@ -12,15 +12,16 @@ shinyUI(fluidPage(
     # Side panel for controls
     sidebarPanel(
       
-      
-      #Widget1, changes data visualization, shows cereals with user selected # of calories
+    #Widget   
+      selectInput('yvar', label = 'Variable to Graph', choices = list("% For Legalization" = 'Percent_Yes', '% Against Legalization' = 'No_Illegal', '% No Opinion' = 'No_Opinion'))
+    ),      
+
 
     # Main panel: display data
       mainPanel(
         #output datavis
-  
+          plotlyOutput('timeline')
       )
     )
-  )
   )
 )
