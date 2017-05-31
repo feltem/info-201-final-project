@@ -2,16 +2,16 @@
 library(shiny)
 library(dplyr)
 #setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
-marijuana.laws <- read.csv('./data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
+marijuana.laws <- read.csv('./Data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
 source('./Scripts/Timeline.R')
 source('./Scripts/MapGraph.R')
 source('./Scripts/Bar Graph.R')
 
 # Map data manipulation. 
-data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
-data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
-states.data <- read.csv("./data/States.csv")
-legalization.status <- read.csv("./data/state_marijuana_laws_10_2016.csv")
+data.set.month <- read.csv("./Data/Marijuana_Use_Past_Month.csv") 
+data.set.year <-  read.csv("./Data/Marijuana_Use_Past_Year.csv")
+states.data <- read.csv("./Data/States.csv")
+legalization.status <- read.csv("./Data/state_marijuana_laws_10_2016.csv")
 
 # Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
