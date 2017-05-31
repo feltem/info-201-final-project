@@ -127,8 +127,8 @@ shinyUI(navbarPage('Marijuana Facts',
                           #bar graph conclusions
                            h3('Conclusions'),   
                            p("We must first define risk perception to be perceieved great risk of harm from smoking marijuana once a month
-                             among people aged 12 or older. It is important to consider the relevance of monthly marijuana usage that has been observed
-                             in the previous map, as well as the map of monthly perceived risk shown below.
+                             among people aged 12 or older. It is important to consider the relevance of monthly/yearly marijuana usage that has been observed
+                             in the previous map, as well as the map of monthly/yearly perceived risk shown below.
                              It appears that despite a national decrease in risk perception, the average risk perception is still a third
                              of the US population. There is a notable similarity between states with a", strong("high percentage of
                              monthly marijuana usage"), "and those with a", strong("low perceived risk of great harm from smoking."), 
