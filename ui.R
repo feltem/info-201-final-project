@@ -21,7 +21,8 @@ shinyUI(navbarPage('Marijuana Facts',
                                    marijuana legalization as well as modern marijuana habits. From them we may interpret national
                                   behavior towards marijuana over time as well as locate potential areas where further education and policies concerning
                                   marijuana could be implemented, as the dangers of marijuana are unnecessarily embellished and the continuation
-                                  of criminalization of the most used (somewhat) illicit drug in America is expensive and unneeded."),
+                                  of criminalization of the most used (somewhat) illicit drug in America is expensive and unneeded. This information
+                                  is directed towards educators and those with general interest in marijuana behavioral patterns in the US."),
                                 br(),
                                 
                                 #background text
