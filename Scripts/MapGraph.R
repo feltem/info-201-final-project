@@ -8,6 +8,7 @@ library(tidyr)
 
 #function for building a map
 BuildMap <- function(avg.data){
+  
   l <- list(color = toRGB("White"), width = 2 )
   
   g <- list(
@@ -20,7 +21,7 @@ BuildMap <- function(avg.data){
   AvgMonthYear <- plot_geo(avg.data, locationmode = 'USA-states') %>%
     add_trace(
       z = ~percents, locations = ~Abbreviation,
-      color = ~percents, colors = 'Greens'
+      color = ~percents, colors = 'Greens', text = ~hover
     ) %>%
     colorbar(title = "% Weed Smoked") %>%
     layout(
