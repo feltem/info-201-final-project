@@ -27,7 +27,7 @@ BuildBar <- function(data) {
                   type = "bar", 
                   error_y = ~list(value = c(month.confidence, year.confidence, risk.confidence),
                                   color = '#000000'),
-                  marker = list(color = c('rgb(140,0,26)', 'rgb(140,0,26)', 'rgb(169,169,169)'), width = 1.5, 
+                  marker = list(color = c('rgb(58,95,11)', 'rgb(58,95,11)', 'rgb(169,169,169)'), width = 1.5, 
                                 line = list(color = 'rgb(169,169,169)'))) %>% 
           layout(title = "Marijuana Usage & Risk",
                  xaxis = list(title = "Marijuana Usage"),
