@@ -104,7 +104,7 @@ shinyUI(navbarPage('Marijuana Facts',
                               #conclusions about map 
                               h2('Conclusions'),
                               p("This map makes a lot of sense and correlates to the legalization of weed (medically and recreationally)
-                               across the US. Most of the highest (pun intended - lol tell me if this is too cheesy) states are Rhode Island, Colorado, 
+                               across the US. The highest (pun intended) states are Rhode Island, Colorado, 
                                Vermont, Washington, and Alaska (monthly), with Oregon and District of Columbia being added to this list when we observe
                                highest yearly averages.", strong("All"), "of these states have either legalized recreational or medicinal marijuana use. All
                                states with a monthly average below 5.6% and a yearly average below 10.26% (excluding North Dakota) have", strong("no laws
