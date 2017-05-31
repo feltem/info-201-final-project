@@ -16,14 +16,13 @@ BuildMap <- function(avg.data){
     showlakes = TRUE,
     lakecolor = toRGB('white')
   )
-  avg.data
-  avg.data$percents <- paste0(avg.data$percents, '%')
+  
   AvgMonthYear <- plot_geo(avg.data, locationmode = 'USA-states') %>%
     add_trace(
-      z = paste0(~percents, '%'), locations = ~Abbreviation,
+      z = ~percents, locations = ~Abbreviation,
       color = ~percents, colors = 'Greens'
     ) %>%
-    colorbar(title = "Week Smoked") %>%
+    colorbar(title = "% Weed Smoked") %>%
     layout(
       title = 'Weed Smoked in America',
       geo = g

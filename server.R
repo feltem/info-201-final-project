@@ -20,10 +20,8 @@ updated.year.data <- mutate(data.set.year, percents = extract_numeric(Small..Are
 # Organize percentages smoked by State
 avg.month.data <- ddply(updated.month.data, .(State), summarize, percents = mean(percents))
 new.avg.month.data <- merge(avg.month.data, states.data, by = "State")
-new.avg.month.data$percents <- paste0(round(new.avg.month.data$percents, digits = 2), '%')
 avg.year.data <- ddply(updated.year.data, .(State), summarize, percents = mean(percents))
 new.avg.year.data <- merge(avg.year.data, states.data, by = "State")
-new.avg.year.data$percents <- paste0(round(new.avg.year.data$percents, digits = 2), '%')
 
 # Number of states that have legalized medical marijuana
 legalized.medical <- legalization.status %>% filter(Medical.marijuana.legalized == 'Yes') %>% select(Medical.marijuana.legalized, State)
