@@ -21,20 +21,20 @@ shinyUI(navbarPage('Marijuana Facts',
                                    marijuana legalization as well as modern marijuana habits. From them we may interpret national
                                   behavior towards marijuana over time as well as locate potential areas where further education and policies concerning
                                   marijuana could be implemented, as the dangers of marijuana are unnecessarily embellished and the continuation
-                                  of criminalization of the most used illicit drug in America is expensive and unneeded."),
+                                  of criminalization of the most used (somewhat) illicit drug in America is expensive and unneeded."),
                                 br(),
                                 
                                 #background text
                                 h4("Background"),
                                 p("There has been a significant shift in stance on the legalization of marijuana
-                                   within the past 40 years. Beginning with the decriminalization of marijuana starting 
+                                   within the past 40 years, beginning with the decriminalization of marijuana starting 
                                    in the early 1970's, the legalization of medical marijuana starting in 1996, and the
                                    legalization of recreational marijuana starting in 2012.", helpText( a("source", href="https://en.wikipedia.org/wiki/Timeline_of_cannabis_laws_in_the_United_States")), "The US has seen an undeniable
                                    phenomena of widespread removal of marijuana prohibition. The additional national support
-                                   for marijuana legalization has come hand in hand withi these developments. There are still questions
+                                   for marijuana legalization has come hand in hand with these developments. There are still questions
                                    and issues to be answered, though, as marijuana legalization is not national, and the perception
                                    of marijuana as an extreme danger still resides in conservative governmental bodies and their
-                                   respective states despite its relatively harmless consequences."),
+                                   respective states despite the drug's relatively harmless consequences."),
                                 br(),
                                 
                                 #legalization status
@@ -46,9 +46,7 @@ shinyUI(navbarPage('Marijuana Facts',
                                 h4("How was the data collected?"),
                                 p("Several of the datasets came from the Substance Abuse Mental Health Services Administration, as well as a Gallup study
                                   and a separate study conducted by Governing Data.")
-                                #insert gallup and governing data links??? 
-                                
-                                
+
                                 
                               )
                             ),
