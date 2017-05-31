@@ -22,7 +22,7 @@ BuildMap <- function(avg.data){
       z = ~percents, locations = ~Abbreviation,
       color = ~percents, colors = 'Greens'
     ) %>%
-    colorbar(title = "Week Smoked") %>%
+    colorbar(title = "% Weed Smoked") %>%
     layout(
       title = 'Weed Smoked in America',
       geo = g
