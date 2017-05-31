@@ -16,7 +16,7 @@ shinyUI(navbarPage('Marijuana Facts',
                                 img(src="./leaf18n-1-web.jpg", height = 400, width = 300),
                                 
                                 #info on relevance of data
-                                h1("Why tho"),
+                                h1("Why do we care?"),
                                 p("The following plots represent insightful information about the process of
                                    marijuana legalization as well as modern marijuana habits. From them we may interpret national
                                   behavior towards marijuana over time as well as locate potential areas where further education and policies concerning
@@ -100,6 +100,7 @@ shinyUI(navbarPage('Marijuana Facts',
                             # Show a plot of the generated distribution
                             mainPanel(
                               plotlyOutput("AvgMonthYear"),
+                              
                               #conclusions about map 
                               h2('Conclusions'),
                               p("This map makes a lot of sense and correlates to the legalization of weed (medically and recreationally)
