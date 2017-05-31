@@ -11,7 +11,7 @@ source('./Scripts/Bar Graph.R')
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 states.data <- read.csv("./data/States.csv")
-legalization.status <- read.csv("./Data/state_marijuana_laws_10_2016.csv")
+legalization.status <- read.csv("./data/state_marijuana_laws_10_2016.csv")
 
 # Create new column with no percent sign so we can calculate values
 updated.month.data <- mutate(data.set.month, percents = extract_numeric(Small..Area.Estimate))
