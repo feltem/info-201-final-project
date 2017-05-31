@@ -15,9 +15,8 @@ BuildTimeline <- function(data, yvar){
   timeline <- plot_ly(data=data, x = ~Year, line = list(color = 'rgb(58, 95, 11)'),
           y = eval(parse(text = var.equation)),
           type = 'scatter', mode = 'lines+markers')%>%
-    layout(title = "National Views on Marijuana Legalization (1969-2016)")
-  
-  
+    layout(title = "National Views on Marijuana Legalization (1969-2016)", 
+           yaxis = list(title = (sub("_", " ", yvar))))
   
   return(timeline)
 }
