@@ -1,10 +1,16 @@
 # server.r 
 library(shiny)
 library(dplyr)
+<<<<<<< HEAD
+=======
+#setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
+marijuana.laws <- read.csv('./Data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
+>>>>>>> e70b98c027ebf30bd06504a567fcdea37733e178
 source('./Scripts/Timeline.R')
 source('./Scripts/MapGraph.R')
 source('./Scripts/Bar Graph.R')
 
+<<<<<<< HEAD
 # Timeline Data Manipulation ---------------------------------
 #setwd("C:/Users/Julia/Desktop/Info201/info-201-final-project")
 marijuana.laws <- read.csv('./data/legal_marijuana_support.csv', stringsAsFactors = FALSE)
@@ -31,6 +37,12 @@ confidence.interval <- c(month.avg - round(mean(as.numeric(gsub("%", "", as.char
 data.set.month <- read.csv("./data/Marijuana_Use_Past_Month.csv") 
 data.set.year <-  read.csv("./data/Marijuana_Use_Past_Year.csv")
 states.data <- read.csv("./data/States.csv")
+=======
+# Map data manipulation. 
+data.set.month <- read.csv("./Data/Marijuana_Use_Past_Month.csv") 
+data.set.year <-  read.csv("./Data/Marijuana_Use_Past_Year.csv")
+states.data <- read.csv("./Data/States.csv")
+>>>>>>> e70b98c027ebf30bd06504a567fcdea37733e178
 legalization.status <- read.csv("./Data/state_marijuana_laws_10_2016.csv")
 
 # Create new column with no percent sign so we can calculate values
