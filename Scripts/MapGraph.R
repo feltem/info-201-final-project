@@ -3,10 +3,10 @@ library(dplyr)
 library(plotly)
 library(plyr)
 library(tidyr)
-#Set Working Directory:
+# Set Working Directory:
 #setwd("~/Documents/Spring2017/INFO201/final/info-201-final-project/Scripts")
 
-#function for building a map
+# Function for building a map
 BuildMap <- function(avg.data){
   
   l <- list(color = toRGB("White"), width = 2 )

@@ -1,14 +1,9 @@
 # ui.r
-
-
 library(shiny)
-library(plotly)
 
 shinyUI(navbarPage('Marijuana Facts',
                    
                    tabPanel("Introduction",
-                    
-                           
                             
                             # Main panel: display data
                               mainPanel(align = "center",
@@ -154,7 +149,5 @@ shinyUI(navbarPage('Marijuana Facts',
                          )
                          
                 )
-                
-                
     )
   )
